@@ -3,6 +3,20 @@ import logging
 from ytmusicapi import YTMusic
 from urllib.parse import urlparse, parse_qs
 
+
+def validate_csv(filename):
+    with open(filename, 'r') as csvfile:
+        reader = csv.DictReader(csvfile)
+        
+        # Check for required headers
+        if 'Song' not in reader.fieldnames or 'Artist' not in reader.fieldnames:
+            raise ValueError(f"CSV is missing required headers. Found headers: {', '.join(reader.fieldnames)}")
+
+        for row in reader:
+            if not row['Song'] or not row['Artist']:
+                raise ValueError(f"Malformed row detected at line {reader.line_num}. Song: {row['Song']} | Artist: {row['Artist']}")
+
+
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -19,6 +33,13 @@ if not playlist_url:
 # List to store songs that failed to load
 failed_songs = []
 
+#Make sure the csv is formatted correctly
+try:
+    validate_csv('songs.csv')
+except ValueError as e:
+    logging.error(f"CSV Validation Error: {e}")
+    exit(1)
+        
 # Read songs from CSV
 songs_data = []
 with open('songs.csv', 'r', newline='', encoding='utf-8') as file:
