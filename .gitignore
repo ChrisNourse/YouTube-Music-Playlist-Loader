@@ -10,3 +10,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+#Poetry Lock File https://stackoverflow.com/questions/61037557/should-i-commit-lock-file-changes-separately-what-should-i-write-for-the-commi
+poetry.lock
