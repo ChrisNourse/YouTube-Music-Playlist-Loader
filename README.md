@@ -5,20 +5,27 @@ This script allows you to automatically add songs from a CSV file to a YouTube M
 
 ## Prerequisites
 
-1. **Python 3**: Ensure Python 3 is installed on your system.
-2. **ytmusicapi**: Install the library using pip:
-   ```bash
-   pip install ytmusicapi
-   ```
+- Python 3.7+
+- [Poetry](https://python-poetry.org/docs/) for dependency management
 
 ## Setup
+
+1. **Clone the Repository**
+    ```bash
+    git clone https://github.com/ChrisNourse/YouTube-Music-Playlist-Loader.git
+    ```
+
+2. **Set up the Python environment with Poetry**
+    ```bash
+    poetry install
+    ```
 
 ### `oauth.json`
 
 To use the `ytmusicapi`, you'll need to authenticate via a `oauth.json` file. 
 
 To generate `oauth.json`, follow the instructions on the ytmusic documentation:  
-https://ytmusicapi.readthedocs.io/en/stable/usage.html
+https://ytmusicapi.readthedocs.io/en/stable/setup/index.html
 
 ### `songs.csv`
 
