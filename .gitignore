@@ -1,0 +1,3 @@
+# Exclude authentication headers for YouTube Music
+oauth.json
+songs.csv

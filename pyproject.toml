@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "ytmusic playlistloader"
+version = "0.1.0"
+description = "A tool to automatically add songs from a CSV file to a YouTube Music playlist."
+authors = ["chris <christopher.nourse@gmail.com>"]
+readme = "README.md"
+license = "BSD-3-Clause"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+ytmusicapi = "^1.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
