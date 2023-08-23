@@ -1,8 +1,7 @@
 
 # YouTube Music Playlist Updater
 
-
-This script allows you to automatically add songs from a CSV file to a YouTube Music playlist, ensuring that the artist of each song matches the one provided in the CSV.
+This script allows you to automatically add songs from a CSV file to a YouTube Music playlist.
 
 ## Prerequisites
 
